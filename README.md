@@ -1,6 +1,10 @@
 # Novoic-Audio-Challenge
 This will be where files, plots and scripts created throughout this project will be stored.
 
+'functions.py' => where functions are stored
+'feature_extraction.py' => where the features desired are extracted from audio files
+'learning.py' => where a traditional machine learning algorithm is used to analyse and classify data
+
 For this project, I chose to focus on data exploration/visualization as well as binary and multiclass classfication. After in-depth research on audio signal processing, I chose to use a typical machine learning approach after engineering relevant features. As all words are monosyllabic (some with monophthongs and some with diphthongs), three key features are the first three formants of the audio signal, which were computed via a personalised function that implements linear predictive coding. As there are differences in average pitches between various people, the mean of the three formants for each sample was also recorded, almost as a reference point. Similarly, the difference between the first two formants is a common classfier of vowels. To account for irregularities, the duration of the sound (not the same as the audio file duration) was taken as another feature, which may also shine some light into words with nasal sounds. As a rough classifier for plosives, the difference between the peak and mean intensity was taken and normalised by the peak(to account for different amplitudes) and multipied by the duration of the sound(s), to account for the mean of a signal depending on its duration (essentially drops to 0 when the word is not being spoken). 
 
 Features:
